@@ -28,6 +28,8 @@
 	return self;
 }
 - (void)setEntryDate:(NSCalendarDate *)date{
+	[date retain];
+	[entryDate release];
 	entryDate = date;
 }
 - (NSCalendarDate *)entryDate{
@@ -45,6 +47,7 @@
 	result = [[NSString alloc] initWithFormat:@"%@ = %d and %d",
 			  [entryDate descriptionWithCalendarFormat:@"%e %B %Y"],
 			  firstNumber,secondNumber];
+	[result autorelease];
 	return result;
 }
 - (void)dealloc
