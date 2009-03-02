@@ -10,6 +10,7 @@
 
 
 @implementation LotteryEntry
+
 - (void)prepareRandomNumbers{
 	firstNumber = random() % 100 + 1;
 	secondNumber = random() % 100 + 1;
@@ -26,4 +27,13 @@
 - (int)secondNumber{
 	return secondNumber;
 }
+- (NSString *)description
+{
+	NSString *result;
+	result = [[NSString alloc] initWithFormat:@"%@ = %d and %d",
+			  [entryDate descriptionWithCalendarFormat:@"%b %d %Y"],
+			  firstNumber,secondNumber];
+	return result;
+}
+
 @end
