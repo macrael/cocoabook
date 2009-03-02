@@ -12,6 +12,8 @@
 @interface AppController : NSObject {
 	IBOutlet NSTextField *textField;
 	NSSpeechSynthesizer *speechSynth;
+	IBOutlet NSButton *startButton;
+	IBOutlet NSButton *stopButton;
 }
 - (IBAction)sayIt:(id)sender;
 - (IBAction)stopIt:(id)sender;
