@@ -1,0 +1,7 @@
+//
+// Prefix header for all source files of the 'RaiseManCh' target in the 'RaiseManCh' project
+//
+
+#ifdef __OBJC__
+    #import <Cocoa/Cocoa.h>
+#endif
