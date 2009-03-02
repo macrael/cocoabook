@@ -21,7 +21,7 @@
 		return nil;
 	}
 	
-	NSAssert(theDate != nil,@"Argument must be non-nil");
+	NSAssert(theDate != nil,@"Argument theDate must be non-nil");
 	entryDate = theDate;
 	firstNumber = random() % 100 + 1;
 	secondNumber = random() % 100 + 1;
@@ -43,7 +43,7 @@
 {
 	NSString *result;
 	result = [[NSString alloc] initWithFormat:@"%@ = %d and %d",
-			  [entryDate descriptionWithCalendarFormat:@"%b %d %Y"],
+			  [entryDate descriptionWithCalendarFormat:@"%e %B %Y"],
 			  firstNumber,secondNumber];
 	return result;
 }
