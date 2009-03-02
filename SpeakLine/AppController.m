@@ -17,6 +17,7 @@
 	
 	speechSynth = [[NSSpeechSynthesizer alloc] initWithVoice:nil];
 	[speechSynth setDelegate:self];
+	voiceList = [[NSSpeechSynthesizer availableVoices] retain];
 	return self;
 }
 
@@ -31,6 +32,7 @@
 	NSLog(@"Have started to say: %@",string);
 	[stopButton setEnabled:YES];
 	[startButton setEnabled:NO];
+	[tableView setEnabled:NO];
 }
 - (IBAction)stopIt:(id)sender
 {
@@ -44,12 +46,13 @@
 	NSLog(@"complete = %d",complete);
 	[stopButton setEnabled:NO];
 	[startButton setEnabled:YES];
+	[tableView setEnabled:YES];
 }
 
 - (void)speechSynthesizer:(NSSpeechSynthesizer *)sender 
 		 willSpeakPhoneme:(short)phonemeOpcode
 {
-	NSLog(@"phoneme = %hi",phonemeOpcode);
+	//NSLog(@"phoneme = %hi",phonemeOpcode);
 }
 - (void)speechSynthesizer:(NSSpeechSynthesizer *)sender 
 			willSpeakWord:(NSRange)characterRange 
@@ -58,6 +61,45 @@
 	NSLog(@"speaking = %@",[string substringWithRange:characterRange]);
 }
 
+- (int)numberOfRowsInTableView:(NSTableView *)tv
+{
+	return [voiceList count];
+}
+- (id)tableView:(NSTableView *)tv
+objectValueForTableColumn:(NSTableColumn *)tableColumn
+			row:(int)row
+{
+	NSString *v = [voiceList objectAtIndex:row];
+	NSDictionary *dict = [NSSpeechSynthesizer attributesForVoice:v];
+	return [dict objectForKey:NSVoiceName];
+}
 
+- (void)tableViewSelectionDidChange:(NSNotification *)notification
+{
+	int row = [tableView selectedRow];
+	if (row == -1){
+		NSLog(@"no selection");
+		return;
+	}
+	NSString *selectedVoice = [voiceList objectAtIndex:row];
+	[speechSynth setVoice:selectedVoice];
+	NSLog(@"New voice = %@",selectedVoice);
+}
+
+- (void)awakeFromNib
+{
+	NSLog(@"Awaking...");
+	NSString *defaultVoice = [NSSpeechSynthesizer defaultVoice];
+	int defaultRow = [voiceList indexOfObject:defaultVoice];
+	[tableView selectRow:defaultRow	byExtendingSelection:NO];
+	[tableView scrollRowToVisible:defaultRow];
+}
+
+- (BOOL)respondsToSelector:(SEL)aSelector
+{
+	NSString *method = NSStringFromSelector(aSelector);
+	NSLog(@"Delegate method send: %@",method);
+	return [super respondsToSelector:aSelector];
+}
 
 @end

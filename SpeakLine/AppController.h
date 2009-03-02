@@ -14,6 +14,8 @@
 	NSSpeechSynthesizer *speechSynth;
 	IBOutlet NSButton *startButton;
 	IBOutlet NSButton *stopButton;
+	IBOutlet NSTableView *tableView;
+	NSArray *voiceList;
 }
 - (IBAction)sayIt:(id)sender;
 - (IBAction)stopIt:(id)sender;
