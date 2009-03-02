@@ -1,19 +1,31 @@
 #import <Foundation/Foundation.h>
+#import "LotteryEntry.h"
 
 int main (int argc, const char * argv[]) {
     NSAutoreleasePool * pool = [[NSAutoreleasePool alloc] init];
+	
+	NSCalendarDate *now = [[NSCalendarDate alloc] init];
 
 	NSMutableArray *array;
 	array = [[NSMutableArray alloc] init];
 	int i;
-	for (i = 0; i<10; i++){
-		NSNumber *newNumber = [[NSNumber alloc] initWithInt:(i*3)];
-		[array addObject:newNumber];
+	for (i = 0; i < 10; i++){
+		NSCalendarDate *iWeeksFromNow;
+		iWeeksFromNow = [now dateByAddingYears:0 
+										months:0
+										  days:(i*7) 
+										 hours:0
+									   minutes:0
+									   seconds:0];
+		LotteryEntry *newEntry = [[LotteryEntry alloc]init];
+		[newEntry prepareRandomNumbers];
+		[newEntry setEntryDate:iWeeksFromNow];
+		[array addObject:newEntry];
+		
 	}
 	
-	for (i = 0; i<10; i++){
-		NSNumber *numberToPrint = [array objectAtIndex:i];
-		NSLog(@"The number at index %d is %@", i, numberToPrint);
+	for(LotteryEntry *entryToPrint in array){
+		NSLog(@"%@",entryToPrint);
 	}
 	
     [pool drain];
