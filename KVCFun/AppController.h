@@ -10,7 +10,11 @@
 
 
 @interface AppController : NSObject {
-
+	int fido;
 }
+
+@property int fido;
+
+- (IBAction)incrementFido:(id)sender;
 
 @end
