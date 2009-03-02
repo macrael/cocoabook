@@ -22,7 +22,7 @@
 	}
 	
 	NSAssert(theDate != nil,@"Argument theDate must be non-nil");
-	entryDate = theDate;
+	entryDate = [theDate retain];
 	firstNumber = random() % 100 + 1;
 	secondNumber = random() % 100 + 1;
 	return self;
@@ -46,6 +46,12 @@
 			  [entryDate descriptionWithCalendarFormat:@"%e %B %Y"],
 			  firstNumber,secondNumber];
 	return result;
+}
+- (void)dealloc
+{
+	NSLog(@"deallocating %@",self);
+	[entryDate release];
+	[super dealloc];
 }
 
 @end

@@ -20,13 +20,20 @@ int main (int argc, const char * argv[]) {
 		LotteryEntry *newEntry = [[LotteryEntry alloc]
 									initWithEntryDate:iWeeksFromNow];
 		[array addObject:newEntry];
+		[newEntry release];
 		
 	}
+	//Done with 'now'
+	[now release];
+	now = nil;
 	
 	for(LotteryEntry *entryToPrint in array){
 		NSLog(@"%@",entryToPrint);
 	}
-	
+	//Done with 'array'
+	[array release];
+	array = nil;
     [pool drain];
+	NSLog(@"GC = %@", [NSGarbageCollector defaultCollector]);
     return 0;
 }
