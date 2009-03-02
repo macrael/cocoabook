@@ -21,7 +21,7 @@
 		return nil;
 	}
 	
-	NSAssert(theDate != nil,@"Argument theDate must be non-nil");
+	NSAssert(theDate == nil,@"Argument theDate must be non-nil");
 	entryDate = [theDate retain];
 	firstNumber = random() % 100 + 1;
 	secondNumber = random() % 100 + 1;
