@@ -13,7 +13,10 @@
 @interface MyDocument : NSDocument
 {
 	NSMutableArray *employees;
+	IBOutlet NSTableView *tableView;
+	IBOutlet NSArrayController *employeeController;
 }
+- (IBAction)createEmployee:(id)sender;
 - (void)setEmployees:(NSMutableArray *)a;
 - (void)insertObject:(Person *)p inEmployeesAtIndex:(int)index;
 - (void)removeObjectFromEmployeesAtIndex:(int)index;
