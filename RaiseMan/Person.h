@@ -17,6 +17,5 @@
 @property float expectedRaise;
 
 - (void)setNilValueForKey:(NSString *)key;
-- (void)encodeWithCoder:(NSCoder *)coder;
 
 @end
