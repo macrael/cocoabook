@@ -9,11 +9,14 @@
 #import <Foundation/Foundation.h>
 
 
-@interface Person : NSObject {
+@interface Person : NSObject <NSCoding> {
 	NSString *personName;
 	float expectedRaise;
 }
 @property (copy) NSString *personName;
 @property float expectedRaise;
+
+- (void)setNilValueForKey:(NSString *)key;
+- (void)encodeWithCoder:(NSCoder *)coder;
 
 @end
