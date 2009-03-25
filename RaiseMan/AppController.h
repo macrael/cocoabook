@@ -13,5 +13,6 @@
 	PreferenceController *preferenceController;
 }
 - (IBAction)showPreferencePanel:(id)sender;
+- (IBAction)showAboutPanel:(id)sender;
 
 @end

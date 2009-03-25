@@ -21,4 +21,10 @@
 	NSLog(@"showing %@",preferenceController);
 	[preferenceController showWindow:self];
 }
+
+- (IBAction)showAboutPanel:(id)sender
+{
+	[NSBundle loadNibNamed:@"about" owner:self];
+}
+
 @end

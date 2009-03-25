@@ -11,6 +11,7 @@
 		1DDD582D0DA1D0D100B32029 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1DDD582A0DA1D0D100B32029 /* MainMenu.xib */; };
 		3605BC8B0F5C8BE4006203EC /* Person.m in Sources */ = {isa = PBXBuildFile; fileRef = 3605BC8A0F5C8BE4006203EC /* Person.m */; };
 		367F376C0F5F61A20016F57E /* BBall.icns in Resources */ = {isa = PBXBuildFile; fileRef = 367F376B0F5F61A20016F57E /* BBall.icns */; };
+		368A5B730F79F13D00B34AA5 /* about.xib in Resources */ = {isa = PBXBuildFile; fileRef = 368A5B720F79F13D00B34AA5 /* about.xib */; };
 		369803670F7329FB00D79EED /* AppController.m in Sources */ = {isa = PBXBuildFile; fileRef = 369803660F7329FB00D79EED /* AppController.m */; };
 		3698036B0F732B9D00D79EED /* PreferenceController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3698036A0F732B9D00D79EED /* PreferenceController.m */; };
 		3698036D0F732C6400D79EED /* Preferences.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3698036C0F732C6400D79EED /* Preferences.xib */; };
@@ -37,6 +38,7 @@
 		3605BC890F5C8BE4006203EC /* Person.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Person.h; sourceTree = "<group>"; };
 		3605BC8A0F5C8BE4006203EC /* Person.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Person.m; sourceTree = "<group>"; };
 		367F376B0F5F61A20016F57E /* BBall.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = BBall.icns; sourceTree = "<group>"; };
+		368A5B720F79F13D00B34AA5 /* about.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = about.xib; sourceTree = "<group>"; };
 		369803650F7329FB00D79EED /* AppController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppController.h; sourceTree = "<group>"; };
 		369803660F7329FB00D79EED /* AppController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppController.m; sourceTree = "<group>"; };
 		369803690F732B9D00D79EED /* PreferenceController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PreferenceController.h; sourceTree = "<group>"; };
@@ -123,6 +125,7 @@
 		2A37F4B8FDCFA73011CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				368A5B720F79F13D00B34AA5 /* about.xib */,
 				3698036C0F732C6400D79EED /* Preferences.xib */,
 				367F376B0F5F61A20016F57E /* BBall.icns */,
 				2A37F4B9FDCFA73011CA2CEA /* Credits.rtf */,
@@ -192,6 +195,7 @@
 				1DDD582D0DA1D0D100B32029 /* MainMenu.xib in Resources */,
 				367F376C0F5F61A20016F57E /* BBall.icns in Resources */,
 				3698036D0F732C6400D79EED /* Preferences.xib in Resources */,
+				368A5B730F79F13D00B34AA5 /* about.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
